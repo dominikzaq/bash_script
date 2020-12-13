@@ -2,8 +2,7 @@
 # Program sprawdza tylko uzytkowikow z katalogu /home
 list_user_with_directory_home="ls /home/"
 
-# grep L -> znaczy ze nie ma hasla P -> znaczy ze ma haslo
-#awk '{ print $1}' pobiera pierwsza kolumne(w naszym przypadku uytwkonikow)
+# grep L -> uzytkownik ze nie ma ustawionego hasla P -> uzytkownik ma ustawione haslo
 list_of_user_without_password=`passwd -Sa | grep L | awk '{ print $1}'`
 
 for user in $list_of_user_without_password
