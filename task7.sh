@@ -1,11 +1,6 @@
 #!/bin/bash
 
-echo "Podaj katalog zrodlowy"
-read directoryA
-[ ! -d "$directoryA" ] && echo "Directory doesn't exists, You can't copy files. Program exit" && exit 1
-
-echo "Podaj katalog docelowy"
-read directoryB
-[ ! -d "$directoryB" ] && echo "Directory doesn't exists, You can't copy files. Program exit" && exit 1
-
-cp -R directoryA directoryB
+read -p "Write new PS1 " input_PS1
+[ ! -z "$input_PS1" ] && PS1='$input_PS1'
+read -p "Write new PS2" input_PS2
+[ ! -z "$input_PS2" ] && PS12='input_PS2'

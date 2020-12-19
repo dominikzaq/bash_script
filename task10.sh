@@ -1,11 +1,8 @@
 #!/bin/bash
-
-echo "Podaj katalog zrodlowy"
-read directoryA
+read -p "Podaj katalog zrodlowy " directoryA
 [ ! -d "$directoryA" ] && echo "Directory doesn't exists, You can't copy files. Program exit" && exit 1
-
-echo "Podaj katalog docelowy"
-read directoryB
+ 
+read -p "Podaj katalog docelowy " directoryB
 [ ! -d "$directoryB" ] && echo "Directory doesn't exists, You can't copy files. Program exit" && exit 1
 
 cp -R $directoryA $directoryB

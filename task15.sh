@@ -1,8 +1,7 @@
 #!/bin/bash
-# Program sprawdza tylko uzytkowikow z katalogu /home
 list_user_with_directory_home="ls /home/"
 
-# grep L -> uzytkownik ze nie ma ustawionego hasla P -> uzytkownik ma ustawione haslo
+# grep L ->  Puser without password P-> User with passowrd
 list_of_user_without_password=`passwd -Sa | grep L | awk '{ print $1}'`
 
 for user in $list_of_user_without_password
