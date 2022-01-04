@@ -2,7 +2,7 @@
 
 if [ $# -eq 1 ]; then
   directory_name=$1
-  find $directory_name -printf "%y %p \n\0" | sort -z   
+  find $directory_name  -exec stat -c"%n %F %A %U" {} \;
 else
   echo "zla liczba parametrow"    
 fi
